@@ -1,11 +1,16 @@
 {
   "name": "simple-react-native-components",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "main": "./src/index.tsx",
   "scripts": {
     "build": "cp ./exampleApp/lib/main.tsx ./src/index.tsx ",
     "publish": "npm publish"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*",
+    "react-native-reanimated": "*"
   },
   "repository": {
     "type": "git",
