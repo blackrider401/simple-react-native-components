@@ -5,7 +5,7 @@
   "main": "./src/index.tsx",
   "scripts": {
     "build": "cp ./exampleApp/lib/main.tsx ./src/index.tsx ",
-    "pub": "npm publish"
+    "publish": "npm publish"
   },
   "repository": {
     "type": "git",
