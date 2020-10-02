@@ -1,6 +1,0 @@
-
-...
-import { MyComponent } from 'simple-react-native-components'
-
-let result = MyComponent(value);
-...

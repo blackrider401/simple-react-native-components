@@ -1,34 +1,26 @@
 {
-  "name": "exampleApp",
-  "version": "0.0.1",
-  "private": true,
+  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
-    "start": "react-native start",
-    "test": "jest",
-    "lint": "eslint ."
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject"
   },
   "dependencies": {
+    "expo": "~39.0.2",
+    "expo-status-bar": "~1.0.2",
     "react": "16.13.1",
-    "react-native": "0.63.3"
+    "react-dom": "16.13.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.2.tar.gz",
+    "react-native-web": "~0.13.12"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.4",
-    "@babel/runtime": "^7.8.4",
-    "@react-native-community/eslint-config": "^1.1.0",
-    "@types/jest": "^26.0.14",
-    "@types/react": "^16.9.49",
-    "@types/react-native": "^0.63.23",
-    "@types/react-test-renderer": "^16.9.3",
-    "babel-jest": "^25.1.0",
-    "eslint": "^6.5.1",
-    "jest": "^25.1.0",
-    "metro-react-native-babel-preset": "^0.59.0",
-    "react-test-renderer": "16.13.1",
-    "typescript": "^4.0.3"
+    "react-native-web": "~0.13.7",
+    "@types/react": "~16.9.35",
+    "@types/react-dom": "~16.9.8",
+    "@types/react-native": "~0.63.2",
+    "typescript": "~3.9.5"
   },
-  "jest": {
-    "preset": "react-native"
-  }
+  "private": true
 }
