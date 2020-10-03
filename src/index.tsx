@@ -573,11 +573,10 @@ export const ImageWrap = ({
       resizeMode={props.fit}
       style={{
         overflow: "hidden",
-        flex: props.flex,
         ...Elevation(props.elevation),
         position: props.position,
         width: Width(props.width) || props.widthPercent || "100%",
-        height: Height(props.height) || undefined,
+        height: Height(props.height) || "100%",
         backgroundColor: props.backgroundColor,
         borderRadius: props.borderRadius,
         borderTopLeftRadius: props.borderTopLeftRadius,
@@ -592,7 +591,7 @@ export const ImageWrap = ({
         padding: props.padding,
       }}
     >
-      <Container flex={1} backgroundColor={props.overlayColor}>
+      <Container flex={props.flex || 0} backgroundColor={props.overlayColor}>
         {props.children}
       </Container>
     </ImageBackground>
