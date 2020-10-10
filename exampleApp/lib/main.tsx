@@ -213,6 +213,14 @@ interface RoundedProps {
   children?: React.ReactNode;
 }
 
+interface PositionProps {
+  position?: "absolute" | "relative";
+  top?: number;
+  bottom?: number;
+  left?: number;
+  right?: number;
+}
+
 interface TouchWrapProps {
   opacity?: number;
   elevation?: number;
@@ -336,7 +344,7 @@ interface SlideCallbackProps {
 
 export const scaleFont = (val: any) => {
   let factor = PixelRatio.get();
-  factor > 2.2 ? (factor = 2) : null;
+  factor > 2.3 ? (factor = 2.3) : null;
   let size = ((factor * width) / 1000) * val;
   return size + 7;
 };
@@ -417,6 +425,7 @@ export const Container = ({
   PaddingProps &
   MarginProps &
   BorderRadiusProps &
+  PositionProps &
   BorderWidth) => {
   return (
     <View
@@ -470,6 +479,10 @@ export const Container = ({
           minWidth: props.minWidth,
           minHeight: props.minHeight,
           position: props.position,
+          top: Height(props.top),
+          bottom: Height(props.bottom),
+          left: Width(props.left),
+          right: Width(props.right),
         },
         props.style,
       ]}
