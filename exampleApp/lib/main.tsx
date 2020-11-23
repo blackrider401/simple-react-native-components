@@ -342,11 +342,15 @@ interface SlideCallbackProps {
 // ALL EXPORTS
 // -----------------------------------------------------------------------------
 
-export const scaleFont = (val: any) => {
-  let factor = PixelRatio.get();
-  factor > 2.3 ? (factor = 2.3) : null;
-  let size = ((factor * width) / 1000) * val;
-  return size + 7;
+const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window");
+const scale = SCREEN_WIDTH / 340;
+export const scaleFont = (val: number) => {
+  const newSize = val * scale;
+  if (Platform.OS === "ios") {
+    return Math.round(PixelRatio.roundToNearestPixel(newSize));
+  } else {
+    return Math.round(PixelRatio.roundToNearestPixel(newSize)) - 2;
+  }
 };
 
 export const Height = (val: any) => {
